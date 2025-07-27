@@ -3,15 +3,20 @@
 #' output: html_document
 #' ---
 
-#' ## Plot 1: Frequency of Thematic Sentiment
 
-#+ plot1, fig.width=15.6, fig.height=8.9
+#importing libraries
 library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-df <- read.csv("/Users/kheyaghoshdastidar/Documents/Personal Work/Post - Grad/Ashoka/Coding Test/Code/classified_data.csv")
-df$year_of_release <- as.integer(df$year_of_release)
+df <- read.csv("your_system_path/classified_data.csv")
+df$year_of_release <- as.integer(df$year_of_release) #storing years as integers instead of long 
+
+
+
+#' ## Plot 1: Frequency of Thematic Sentiment Over The Years 
+
+#+ plot1, fig.width=15.6, fig.height=8.9
 
 df_long <- df %>%
   pivot_longer(cols = ends_with("_llm_label"),
@@ -26,6 +31,7 @@ df_long <- df %>%
       theme == "caste_dynamics_llm_label" ~ "Caste Dynamics"
     )
   )
+
 
 ggplot(df_long, aes(x = year_of_release, fill = label)) +
   geom_bar(position = "stack", width = 0.7) +
