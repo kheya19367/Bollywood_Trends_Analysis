@@ -85,7 +85,7 @@ This axis gauges whether films challenge or reinforce patriarchal structures. It
 ### Nationalism *(Tolerant ↔ Jingoistic)*  
 This axis evaluates whether patriotism is framed through inclusive, democratic ideals or through aggressive, jingoistic, and exclusionary forms of nationalism.
 
-### 🧑🏾‍🌾 Caste Dynamics *(Egalitarian ↔ Casteist)*  
+### Caste Dynamics *(Egalitarian ↔ Casteist)*  
 Given the centrality of caste in Indian society, it can serve as a critical lens to analyse cinema. This axis captures whether caste dynamics are portrayed in an equitable manner or whether stereotypical and regressive depictions are present or normalised.
 
 ---
