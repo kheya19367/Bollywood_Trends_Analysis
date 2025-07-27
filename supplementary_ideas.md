@@ -6,6 +6,7 @@ For deepening the cultural, political, and representational analysis of Bollywoo
 ## 1. **Primary Narrative Setting (Geographic & Cultural Context)**
 This attribute aims to capture the geographic or cultural setting of the film's narrative. For instance, a film may be set in a village in Haryana, Mumbai, or in London, or even a fictional realm. Capturing such elements can help in uncovering regional representation biases in Bollywood, urban-rural divides and the portrayals of specific communities.
 Spatial and cultural framing oftentimes affects how themes like caste, gender, and religion are expressed. Analysing such trends can help uncover industry preferences for certain social environments or how political narratives are geographically anchored.
+
 **Data Source / Method:**  
 - Use NLP-based **Named Entity Recognition (NER)** on the plot or summary to extract place names.
 - Cross-reference with TMDb or Wikipedia “Setting” sections (scraped via BeautifulSoup).
