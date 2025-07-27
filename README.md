@@ -9,10 +9,10 @@ This repository contains the code and data for a project collecting and scraping
   - Gender Dynamics 
   - Nationalism
   - Caste Dynamics 
-- Quantify sentiment along ideological axes:
+- Classify sentiment along ideological axes:
   - **Secular — Exclusionary**
   - **Feminist — Misogynistic**
-  - **Progressive — Conservative**
+  - **Tolerant - Jingoistic**
   - **Egalitarian — Casteist**
 
 ---
