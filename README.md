@@ -19,25 +19,32 @@ This repository contains the code and data for a project collecting and scraping
 
 ## Project Pipeline
 
-### 1. **Data Collection**
-- **Source:** IMDb IDs and movie metadata.
-- **Enrichment:** Plot summaries scraped from Wikipedia pages using BeautifulSoup and requests.
+### 1. Data Sourcing and Integration
+- The primary dataset was sourced from [The Indian Movie Database](https://www.kaggle.com/datasets/pncnmnp/the-indian-movie-database).
+- Multiple files were merged to create a **master movie file** with comprehensive metadata and attributes.
+- A sample of **100 movies released after 2010** was selected to ensure the thematic and sentiment analysis was current and consistent.
 
-### 2. **Data Cleaning**
-- Normalize and preprocess text: lowercasing, punctuation removal, filtering non-English summaries, etc.
+### 2. Collection of Movie Materials
 
-### 3. **Theme Classification**
-- Use pre-trained multi-label text classifiers (Hugging Face LLMs) to tag each plot for the presence of major themes.
-- Manual verification for edge cases and ambiguous outputs.
+#### a. Subtitle Files
+- Initial efforts to collect `.srt` subtitle files via **OpenSubtitles** were blocked due to access restrictions.
+- **Subscene** was explored as an alternative, but English subtitle coverage was insufficient.
+- As a result, **subtitle data was not used** in the final analysis.
 
-### 4. **Sentiment Scoring**
-#### Rationale
-Instead of relying on binary or scalar sentiment scores (e.g., positive/negative), the analysis uses a custom multidimensional sentiment approach. This allows for a more nuanced classification of the ideological tone.
+#### b. Plot Summaries
+- **Wikipedia** was the primary source for full plot summaries.
+- If a Wikipedia plot was unavailable:
+  - The project defaulted to the **summary provided in the original dataset**.
+  - If neither was available, the **TMDb API** was used to fetch the official movie description.
+- This layered fallback system ensured the dataset remained **robust** while also maintaining **efficiency and consistency**.
 
-#### Proposed Sentiment Measure:
-- Each ideological axis (e.g., Feminist—Misogynistic) is treated as a **semantic polarity dimension**.
-- Plots are scored using transformer-based sentiment models that interpret tone in the context of domain-specific prompts.
-- Final scores are standardized and normalized for comparison.
+#### c. Visual Metadata
+- Movie **poster images** were collected using the **TMDb API** for supplementary visual analysis.
+
+#### d. Descriptive Metadata
+- **Director gender** was scraped from **Wikipedia**, and inferred via the **Genderize.io API** where information was unavailable.
+- **Box Office performance** was obtained using the **OMDB API**.
+
 
 ### 5. **Visualization & Analysis**
 - ggplot2 used for trend graphs over time
