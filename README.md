@@ -72,6 +72,23 @@ This repository contains the code and data for a project collecting and scraping
 > **Note:** It is recommended to run the classification pipeline on **Google Colab with GPU enabled** for optimal performance. The code also runs on CPU, but with significantly longer processing times.
 
 ---
+## Rationale for Chosen Axes
+
+The chosen axes reflect key socio-political themes that have consistently appeared  Bollywood cinema and are central to public discourse in India. Each axis captures a dimension of ideological framing, making them well-suited for the analysis of a movie's positioning on contentious social issues.
+
+### Hindu–Muslim Relations *(Secular ↔ Exclusionary)*  
+This axis reflects how films represent interreligious dynamics, especially in the context of India's increasingly polarized political landscape. Films may depict either inclusive, pluralistic relationships or align with majoritarian narratives. This axis captures communal framing and religious inclusivity.
+
+### Gender Dynamics *(Feminist ↔ Misogynistic)*  
+This axis gauges whether films challenge or reinforce patriarchal structures. It is particularly relevant in evaluating female agency, objectification, and representation in mainstream cinema.
+
+### Nationalism *(Tolerant ↔ Jingoistic)*  
+This axis evaluates whether patriotism is framed through inclusive, democratic ideals or through aggressive, jingoistic, and exclusionary forms of nationalism.
+
+### 🧑🏾‍🌾 Caste Dynamics *(Egalitarian ↔ Casteist)*  
+Given the centrality of caste in Indian society, it can serve as a critical lens to analyse cinema. This axis captures whether caste dynamics are portrayed in an equitable manner or whether stereotypical and regressive depictions are present or normalised.
+
+---
 
 ### 5. **Visualization & Analysis**
 - ggplot2 used for sentiment trend graphs over time
