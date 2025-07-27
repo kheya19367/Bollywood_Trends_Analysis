@@ -28,7 +28,7 @@ This repository contains the code and data for a project collecting and scraping
 
 #### a. Subtitle Files
 - Initial efforts to collect `.srt` subtitle files via **OpenSubtitles** were blocked due to access restrictions.
-- **Subscene** was explored as an alternative, but English subtitle coverage was insufficient.
+- **Subscene** and **YIFY** were explored as alternatives, but English subtitle coverage was insufficient or scraping attempts were blocked.
 - As a result, **subtitle data was not used** in the final analysis.
 
 #### b. Plot Summaries
