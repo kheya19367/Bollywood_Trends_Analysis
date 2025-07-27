@@ -1,1 +1,16 @@
-
+pandas
+requests
+BeautifulSoup
+wikipedia
+time
+urllib.parse
+re
+os
+json
+torch
+transformers
+asyncio
+aiohttp
+wikipediaapi
+seaborn
+matplotlib.pyplot
