@@ -26,7 +26,7 @@ A binary variable (ex: `0` = no explicit mention, `1` = explicit mention ) can b
 Political messaging in Bollywood has grown more overt in recent years. Capturing explicit references enables tracking of ideological positioning and engagement with real-world politics.
 
 **Collection Method:**  
-- Scan `plot` and `subtitles` for keywords using a **curated political lexicon**.
+- Scan `plot` and `subtitles (.srt files)` for keywords using a **curated political lexicon**.
 - Can consider Manual validation for ambiguous terms or false positives.
 ---
 These structured attributes are directly implementable in the dataset and can be used to complement the current sentiment and thematic tagging work. Each proposed additon supports a quantitative extension of cultural and political inquiry into Bollywood’s evolving content landscape.
