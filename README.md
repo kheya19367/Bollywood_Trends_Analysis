@@ -34,7 +34,7 @@ This repository contains the code and data for a project collecting and scraping
 #### b. Plot Descriptions
 - **Wikipedia** was the primary source for full plot descriptions.
 - If a Wikipedia plot was unavailable:
-  - The project defaulted to the 'story' provided in the original dataset.
+  - The project defaulted to the `story` provided in the original dataset.
   - If neither was available, the **TMDb API** was used to fetch the official movie overview.
 - This layered fallback system ensured the dataset remained robust while also maintaining efficiency and consistency.
 
