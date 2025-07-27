@@ -10,10 +10,10 @@ This repository contains the code and data for a project collecting and scraping
   - Nationalism
   - Caste Dynamics 
 - Quantify sentiment along ideological axes:
-  - **Exclusionary — Secular**
+  - **Secular — Exclusionary**
   - **Feminist — Misogynistic**
   - **Progressive — Conservative**
-  - **Egalitarian - Casteist**
+  - **Egalitarian — Casteist**
 
 ---
 
@@ -22,7 +22,7 @@ This repository contains the code and data for a project collecting and scraping
 ### 1. Data Sourcing and Integration
 - The primary dataset was sourced from [The Indian Movie Database](https://www.kaggle.com/datasets/pncnmnp/the-indian-movie-database).
 - Multiple files were merged to create a **master movie file** with comprehensive metadata and attributes.
-- A sample of **100 movies released after 2010** was selected to ensure the thematic and sentiment analysis was current and consistent.
+- A sample of 100 movies released after 2010 was selected to ensure the thematic and sentiment analysis was current and consistent.
 
 ### 2. Collection of Movie Materials
 
@@ -34,9 +34,9 @@ This repository contains the code and data for a project collecting and scraping
 #### b. Plot Summaries
 - **Wikipedia** was the primary source for full plot summaries.
 - If a Wikipedia plot was unavailable:
-  - The project defaulted to the **summary provided in the original dataset**.
+  - The project defaulted to the summary provided in the original dataset.
   - If neither was available, the **TMDb API** was used to fetch the official movie description.
-- This layered fallback system ensured the dataset remained **robust** while also maintaining **efficiency and consistency**.
+- This layered fallback system ensured the dataset remained robust while also maintaining efficiency and consistency.
 
 #### c. Visual Metadata
 - Movie **poster images** were collected using the **TMDb API** for supplementary visual analysis.
@@ -45,11 +45,37 @@ This repository contains the code and data for a project collecting and scraping
 - **Director gender** was scraped from **Wikipedia**, and inferred via the **Genderize.io API** where information was unavailable.
 - **Box Office performance** was obtained using the **OMDB API**.
 
+### 3. Thematic Classification 
+- To measure the ideological sentiment embedded within Bollywood movie plots, a custom **thematic classification pipeline** was implemented using **zero-shot learning**.
+
+---
+
+## Thematic Classification & Ideological Sentiment Mapping
+
+
+### Approach
+
+- Each movie plot was evaluated on four major socio-political axes:
+  - **Hindu–Muslim relations:** *Secular* ↔ *Exclusionary*
+  - **Gender dynamics:** *Feminist* ↔ *Misogynistic*
+  - **Nationalism:** *Tolerant* ↔ *Jingoistic*
+  - **Caste representation:** *Egalitarian* ↔ *Casteist*
+
+- A zero-shot classification pipeline from Hugging Face was used to assign the most likely label to each plot across these axes. This method allows classification without needing labeled training data.
+
+### Rationale and Model Choice
+
+- Initially, large language model APIs such as Groq and OpenAI were considered to better capture contextual nuance in longer plots. However, due to token size limitations and pricing constraints, they were not viable for a larger dataset (Espescially keepin in mind that the analysis should theoretically be abled to be carried out on movie subtitle files).
+- Several Hugging Face models (`facebook/bart-large-mnli`, `roberta-large-mnli`) were also tested, but caused session crashes and memory overflow errors due to their size and the amount of data.
+- Ultimately, **`cross-encoder/nli-distilroberta-base`** was selected for its lightweight architecture, compatibility with CPU and GPU environments, and reliable zero-shot performance without requiring fine-tuning.
+
+> **Note:** It is recommended to run the classification pipeline on **Google Colab with GPU enabled** for optimal performance. The code also runs on CPU, but with significantly longer processing times.
+
+---
 
 ### 5. **Visualization & Analysis**
-- ggplot2 used for trend graphs over time
-- Comparison across decades, directors, and genres
-
+- ggplot2 used for sentiment trend graphs over time
+- matplotlib and seaborn used to create summary plots for the additional metadata 
 ---
 
 ## Repository Structure
