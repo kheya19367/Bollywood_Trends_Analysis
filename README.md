@@ -31,11 +31,11 @@ This repository contains the code and data for a project collecting and scraping
 - **Subscene** and **YIFY** were explored as alternatives, but English subtitle coverage was insufficient or scraping attempts were blocked.
 - As a result, **subtitle data was not used** in the final analysis.
 
-#### b. Plot Summaries
-- **Wikipedia** was the primary source for full plot summaries.
+#### b. Plot Descriptions
+- **Wikipedia** was the primary source for full plot descriptions.
 - If a Wikipedia plot was unavailable:
-  - The project defaulted to the summary provided in the original dataset.
-  - If neither was available, the **TMDb API** was used to fetch the official movie description.
+  - The project defaulted to the 'story' provided in the original dataset.
+  - If neither was available, the **TMDb API** was used to fetch the official movie overview.
 - This layered fallback system ensured the dataset remained robust while also maintaining efficiency and consistency.
 
 #### c. Visual Metadata
@@ -65,7 +65,7 @@ This repository contains the code and data for a project collecting and scraping
 
 ### Rationale and Model Choice
 
-- Initially, large language model APIs such as Groq and OpenAI were considered to better capture contextual nuance in longer plots. However, due to token size limitations and pricing constraints, they were not viable for a larger dataset (Espescially keepin in mind that the analysis should theoretically be abled to be carried out on movie subtitle files).
+- Initially, large language model APIs such as Groq and OpenAI were considered to better capture contextual nuance in longer plots. However, due to token size limitations and pricing constraints, they were not viable for a larger dataset (especially keeping in mind that the analysis should theoretically be abled to be carried out on movie subtitle files).
 - Several Hugging Face models (`facebook/bart-large-mnli`, `roberta-large-mnli`) were also tested, but caused session crashes and memory overflow errors due to their size and the amount of data.
 - Ultimately, **`cross-encoder/nli-distilroberta-base`** was selected for its lightweight architecture, compatibility with CPU and GPU environments, and reliable zero-shot performance without requiring fine-tuning.
 
