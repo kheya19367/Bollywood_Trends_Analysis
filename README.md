@@ -6,7 +6,7 @@ This repository contains the code and data for a project collecting and scraping
 
 - Identify and classify key themes in Bollywood movie plots such as:
   - Hindu–Muslim relations
-  - Gender representation
+  - Gender Dynamics 
   - Nationalism
   - Caste Dynamics 
 - Quantify sentiment along ideological axes:
@@ -56,10 +56,10 @@ This repository contains the code and data for a project collecting and scraping
 ### Approach
 
 - Each movie plot was evaluated on four major socio-political axes:
-  - **Hindu–Muslim relations:** *Secular* ↔ *Exclusionary*
-  - **Gender dynamics:** *Feminist* ↔ *Misogynistic*
-  - **Nationalism:** *Tolerant* ↔ *Jingoistic*
-  - **Caste representation:** *Egalitarian* ↔ *Casteist*
+  - **Hindu–Muslim relations:** *Secular* - *Exclusionary*
+  - **Gender dynamics:** *Feminist* - *Misogynistic*
+  - **Nationalism:** *Tolerant* - *Jingoistic*
+  - **Caste representation:** *Egalitarian* - *Casteist*
 
 - A zero-shot classification pipeline from Hugging Face was used to assign the most likely label to each plot across these axes. This method allows classification without needing labeled training data.
 
@@ -76,16 +76,16 @@ This repository contains the code and data for a project collecting and scraping
 
 The chosen axes reflect key socio-political themes that have consistently appeared  Bollywood cinema and are central to public discourse in India. Each axis captures a dimension of ideological framing, making them well-suited for the analysis of a movie's positioning on contentious social issues.
 
-### Hindu–Muslim Relations *(Secular ↔ Exclusionary)*  
+### Hindu–Muslim Relations *(Secular - Exclusionary)*  
 This axis reflects how films represent interreligious dynamics, especially in the context of India's increasingly polarized political landscape. Films may depict either inclusive, pluralistic relationships or align with majoritarian narratives. This axis captures communal framing and religious inclusivity.
 
-### Gender Dynamics *(Feminist ↔ Misogynistic)*  
+### Gender Dynamics *(Feminist - Misogynistic)*  
 This axis gauges whether films challenge or reinforce patriarchal structures. It is particularly relevant in evaluating female agency, objectification, and representation in mainstream cinema.
 
-### Nationalism *(Tolerant ↔ Jingoistic)*  
+### Nationalism *(Tolerant - Jingoistic)*  
 This axis evaluates whether patriotism is framed through inclusive, democratic ideals or through aggressive, jingoistic, and exclusionary forms of nationalism.
 
-### Caste Dynamics *(Egalitarian ↔ Casteist)*  
+### Caste Dynamics *(Egalitarian - Casteist)*  
 Given the centrality of caste in Indian society, it can serve as a critical lens to analyse cinema. This axis captures whether caste dynamics are portrayed in an equitable manner or whether stereotypical and regressive depictions are present or normalised.
 
 ---
