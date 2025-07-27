@@ -1,6 +1,6 @@
 # Bollywood Cultural Trends Analysis
 
-This repository contains the code and data for a project collecting and scraping relevant data about Bollywood movies and doing a thematic content and sentiment analysis. The goal is to classify movies by key social themes across several ideological dimensions.
+This repository contains the code and data for a project collecting and scraping relevant data about Bollywood movies and doing a sentiment analysis. The goal is to classify movies by key social themes across several ideological dimensions.
 
 ## Project Objectives
 
