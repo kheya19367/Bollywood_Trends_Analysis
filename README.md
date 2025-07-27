@@ -13,7 +13,7 @@ This repository contains the code and data for a project collecting and scraping
   - **Exclusionary — Secular**
   - **Feminist — Misogynistic**
   - **Progressive — Conservative**
-  - 
+  - **Egalitarian - Casteist**
 
 ---
 
@@ -49,17 +49,16 @@ Instead of relying on binary or scalar sentiment scores (e.g., positive/negative
 
 ```plaintext
 Bollywood_Trends_Analysis/
-├── README.md                  ← You're here!
-├── archive/                   ← The original dataset
+├── README.md                                  ← You're here!
+├── archive/                                   ← The original dataset (The Indian Movie Database)
 ├── notebooks/
-│   ├── 01_data_scraping.ipynb    ← Script for scraping plot summaries
-│   ├── 02_theme_classification.ipynb ← LLM-based theme tagging
-│   └── 03_sentiment_scoring.ipynb ← Custom sentiment scoring code
+│   ├── Movie Sampling.ipynb                   ← Script for merging all attributes from the dataset and sampling 100 movies released post 2010
+│   ├── Bollywood_Analysis_Tasks.ipynb         ← Script for scraping plot, poster and other metadata + sentiment classification 
+│   └── Graph_Sentiment_Classification.R       ← R code for making graphs to visualise sentiment classification results 
 ├── data/
-│   └── classified_data.csv       ← Tagged and Labeled Movie Dataset with imdb ids for merging
-│   └── plot_poster_data.csv      ← Dataset containing the synopsis and movie poster for the sampled movies 
-├── plots/                     ← matplotlib and ggplot2 visualisations
-├── classified_data.csv        ← 
-├── sampled_100_movies.csv     ← Randomly Sampled 100 movies with ALL attribiutes of the original dataset
-├── requirements.txt           ← Python dependencies
-├── supplementary_ideas.md     ← Supplementary Ideas 
+│   └── classified_data.csv                    ← Tagged and Labeled Movie Dataset with imdb ids for merging
+│   └── plot_poster_data.csv                   ← Dataset containing the synopsis and movie poster for the sampled movies 
+├── plots/                                     ← matplotlib and ggplot2 visualisations
+├── sampled_100_movies.csv                     ← Randomly Sampled 100 movies with ALL attribiutes of the original dataset
+├── requirements.txt                           ← Python dependencies
+├── supplementary_ideas.md                     ← Supplementary Ideas 
