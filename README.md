@@ -90,7 +90,7 @@ Given the centrality of caste in Indian society, it can serve as a critical lens
 
 ---
 
-### 5. **Visualization & Analysis**
+## **Visualization & Analysis**
 - ggplot2 used for sentiment trend graphs over time
 - matplotlib and seaborn used to create summary plots for the additional metadata 
 ---
